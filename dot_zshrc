@@ -66,14 +66,18 @@ compdef kubecolor=kubectl
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # Load aliases from cluster repo.
-for ALIAS in ${CLUSTER_BASE_DIR:-${HOME}/dev/vshn/openshift4-clusters}/.aliases/*; do
-  source ${ALIAS}
-done
+if [[ -d ${CLUSTER_BASE_DIR:-${HOME}/dev/vshn/openshift4-clusters} ]]; then
+  for ALIAS in ${CLUSTER_BASE_DIR:-${HOME}/dev/vshn/openshift4-clusters}/.aliases/*; do
+    source ${ALIAS}
+  done
+fi
 
 export CLUSTER_BASE_DIR=${HOME}/dev/vshn/openshift4-clusters
 export COMMODORE_API_URL="https://api.syn.vshn.net"
 
 export KUBE_EDITOR="code -w"
+
+alias vim=nvim
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
