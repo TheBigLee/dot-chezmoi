@@ -1,0 +1,12 @@
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/go/bin"
+
+if [[ -d $HOME/.lmstudio/bin ]]; then
+  # Added by LM Studio CLI (lms)
+  export PATH="$PATH:/home/bigli/.lmstudio/bin"
+  # End of LM Studio CLI section
+fi
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
