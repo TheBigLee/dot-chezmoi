@@ -16,7 +16,7 @@ antigen bundle aliases # various 3rd-party aliases
 antigen bundle eza # alias ls to eza
 antigen bundle gpg-agent
 antigen bundle kubectl
-antigen bundle direnv
+if [[ -n $commands[direnv] ]]; then antigen bundle direnv; fi
 antigen bundle pyenv
 
 if [[ -a /etc/profile.d/autojump.sh ]]; then antigen bundle autojump; fi
