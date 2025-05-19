@@ -16,6 +16,7 @@ antigen bundle aliases # various 3rd-party aliases
 antigen bundle eza # alias ls to eza
 antigen bundle gpg-agent
 antigen bundle kubectl
+antigen bundle kube-ps1
 if [[ -n $commands[direnv] ]]; then antigen bundle direnv; fi
 antigen bundle pyenv
 
