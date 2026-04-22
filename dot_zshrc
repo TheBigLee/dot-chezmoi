@@ -75,7 +75,9 @@ fi
 export CLUSTER_BASE_DIR=${HOME}/dev/vshn/openshift4-clusters
 export COMMODORE_API_URL="https://api.syn.vshn.net"
 
-export KUBE_EDITOR="code -w"
+export KUBE_EDITOR="nvim"
+
+eval "$(zoxide init zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

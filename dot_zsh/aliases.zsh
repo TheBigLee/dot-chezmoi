@@ -6,3 +6,4 @@ alias ls='exa --group-directories-first -g --time-style long-iso'
 if [[ -n $commands[kubecolor] ]]; then alias kubectl=kubecolor; fi
 alias ghcr="echo $GITHUB_REG_TOKEN | docker login ghcr.io -u TheBigLee --password-stdin "
 alias vim=nvim
+alias cd=z
