@@ -1,0 +1,46 @@
+layout {
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        children
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+    tab name="container" cwd="~/dev/schedar-devcontainer" {
+        pane split_direction="horizontal" {
+            pane name="devcontainer" command="ssh" {
+                args "-t" "schedar-devcontainer.devpod"
+            }
+            pane name="devcontainer" command="ssh" {
+                args "-t" "schedar-devcontainer.devpod"
+            }
+        }
+    }
+    tab name="appcat" cwd="~/dev/vshn/appcat/schedar-devcontainer/appcat" split_direction="vertical" {
+        pane split_direction="horizontal" {
+          pane command="nvim"
+          pane command="claude"
+        }
+        pane split_direction="horizontal" {
+            pane command="lazygit"
+            pane name="devcontainer" command="ssh" {
+                args "-t" "schedar-devcontainer.devpod" "cd /workspaces/schedar-devcontainer/appcat"
+            }
+        }
+    }
+    tab name="component" cwd="~/dev/vshn/appcat/schedar-devcontainer/component-appcat" split_direction="vertical" {
+        pane split_direction="horizontal" {
+          pane command="nvim"
+          pane command="claude"
+        }
+        pane split_direction="horizontal" {
+            pane command="lazygit"
+            pane name="devcontainer" command="ssh" {
+                args "-t" "schedar-devcontainer.devpod" "cd /workspaces/schedar-devcontainer/component-appcat"
+            }
+        }
+    }
+    tab name="o4c" cwd="~/dev/vshn/openshift4-clusters"
+}
