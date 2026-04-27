@@ -21,7 +21,7 @@ require("lazy").setup({
     { "folke/lazy.nvim" },
     { import = "plugins" },
   },
-  install = { colorscheme = { "default" } },
+  install = { colorscheme = { "rose-pine-moon" } },
   ui = { border = "rounded" },
   checker = { enabled = false },
 })

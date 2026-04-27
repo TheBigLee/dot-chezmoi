@@ -1,13 +1,11 @@
 return {
-  'nvim-lualine/lualine.nvim',
-  dependencies = {
-    'nvim-tree/nvim-web-devicons'
-  },
-  event = 'VeryLazy',
+  "nvim-lualine/lualine.nvim",
+  event = "VeryLazy",
+  dependencies = { "nvim-tree/nvim-web-devicons" },
   opts = {
     options = {
       icons_enabled = true,
     },
-    extensions = { 'neo-tree', 'nvim-dap-ui', 'overseer', 'toggleterm' },
+    extensions = { "oil", "lazy", "nvim-dap-ui" },
   },
 }

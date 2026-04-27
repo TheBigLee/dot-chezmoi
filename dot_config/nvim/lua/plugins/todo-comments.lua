@@ -1,13 +1,11 @@
 return {
   "folke/todo-comments.nvim",
-  dependencies = { "nvim-lua/plenary.nvim" },
   event = { "BufReadPost", "BufNewFile" },
-  opts = {
-    search = {
-      pattern = [[\b(KEYWORDS)(\([^\)]*\))?:]],
-    },
-    highlight = {
-      pattern = [[.*<((KEYWORDS)%(.{-1,})?):]],
-    },
+  dependencies = { "nvim-lua/plenary.nvim" },
+  opts = {},
+  keys = {
+    { "]t", function() require("todo-comments").jump_next() end, desc = "Next todo comment" },
+    { "[t", function() require("todo-comments").jump_prev() end, desc = "Prev todo comment" },
+    { "<leader>ft", function() Snacks.picker.todo_comments() end, desc = "Find todo" },
   },
 }
